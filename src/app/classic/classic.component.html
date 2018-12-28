@@ -1,0 +1,176 @@
+<div class="container-fluid">
+	<div class="main-div">
+		<div class="row">
+			<div class="col-md-6">
+        <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
+   <div class="main-div" id="contentToConvert">
+    <header>
+            <table>   
+                <tr>
+                    <td style="width:65%"><h1>YASHWANT SONI</h1></td><td style="width:35%;text-align: right;"><i class="fas fa-envelope"></i> yashwantsoni009@gmail.com &#32;&#32; <i class="fas fa-phone"></i>    &#32;(+91)838-798-7009</td>
+                </tr>
+                <tr>
+                    <td >University College of Engineering and Technology, Bikaner</td>
+                    <td style="text-align:right;" ><a href="http://yashwantsoni.live" style="color:#091f42;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i> https://yashwantsoni.live</a></td> 
+                </tr>
+            </table>
+    </header>
+    <hr>
+    <div>
+        <h3 >EDUCATION</h3>
+        <ul>
+            <li>Bachelor of Technology in CSE from College of Engg. and Tech., Bikaner with an aggregate of 62% Marks.</li>
+            <li>Higher secondary from Yadav Bharti senior sec. school with 82.2%.</li>
+        </ul>
+    </div>
+    <div>
+            <h3>WORK EXPERIENCE</h3>
+            <h4 class="title">ixxo.io</h4><span>(May 2018 - July 2018)</span>
+            <ul>
+            <li>Worked on frontend and backend of a web app with Angular and Express framework.</li>   
+            <li>Worked on mapping of data from smart contract using Web3Js also build rest APIs in Golang</li>
+            </ul>
+            <h4 class="title">ixxo.io</h4><span>(May 2018 - July 2018)</span>
+            <ul>
+            <li>Worked on frontend and backend of a web app with Angular and Express framework.</li>   
+            <li>Worked on mapping of data from smart contract using Web3Js also build rest APIs in Golang</li>
+            </ul>
+    </div>
+    <div>
+             <h3>PROJECTS</h3>
+             <h4 class="title" *ngIf="form.value.projects[0].ptitle">{{form.value.projects[0].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[0].plink}}" *ngIf="form.value.projects[0].plink">View</a></li><li *ngIf="form.value.projects[0].pdate">{{form.value.projects[0].pdate}}</li></ul></span>
+            <ul>
+              <li *ngIf="form.value.projects[0].details[0]">{{form.value.projects[0].details[0].detail}}</li>
+              <li  *ngIf="form.value.projects[0].details[1]">{{form.value.projects[0].details[1].detail}}</li>
+              <li  *ngIf="form.value.projects[0].details[2]">{{form.value.projects[0].details[2].detail}}</li> 
+            </ul> 
+            <div *ngIf="form.value.projects[1]">
+            <h4 class="title" *ngIf="form.value.projects[1].ptitle">{{form.value.projects[1].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[1].plink}}" *ngIf="form.value.projects[1].plink">View</a></li><li *ngIf="form.value.projects[1].pdate">{{form.value.projects[1].pdate}}</li></ul></span>
+            <ul>
+              <li *ngIf="form.value.projects[1].details[0]">{{form.value.projects[1].details[0].detail}}</li>
+              <li  *ngIf="form.value.projects[1].details[1]">{{form.value.projects[1].details[1].detail}}</li>
+              <li  *ngIf="form.value.projects[1].details[2]">{{form.value.projects[1].details[2].detail}}</li> 
+            </ul>
+          </div>
+          <div *ngIf="form.value.projects[2]">
+            <h4 class="title" *ngIf="form.value.projects[2].ptitle">{{form.value.projects[2].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[2].plink}}" *ngIf="form.value.projects[2].plink">View</a></li><li *ngIf="form.value.projects[2].pdate">{{form.value.projects[2].pdate}}</li></ul></span>
+            <ul>
+              <li *ngIf="form.value.projects[2].details[0]">{{form.value.projects[2].details[0].detail}}</li>
+              <li  *ngIf="form.value.projects[2].details[1]">{{form.value.projects[2].details[1].detail}}</li>
+              <li  *ngIf="form.value.projects[2].details[2]">{{form.value.projects[2].details[2].detail}}</li> 
+            </ul>
+          </div>
+
+            
+    </div>
+    <div>
+        <h3>TECHNICAL SKILLS</h3>
+        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
+        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
+        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
+        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python
+    </div>
+    <div>
+            <h3>MISCELLANEOUS</h3>
+            Participation: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
+            Position of Responsibility: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
+            Other Interests: Javascript, Go, C, C++, Java, PHP, Solidity, Python
+    </div>
+    <div class="other-interest-a">
+            <h3>Other Links</h3>
+            <a href="#">https://github.com/theyashwantsoni</a><br>
+            <a href="#">https://www.hackerrank.com/theyashwantsoni</a><br>
+            <a href="#">https://www.linkedin.com/in/theyashwantsoni</a>
+    </div>
+</div>
+
+
+
+
+      </div>
+			<div class="col-md-6 field-div">
+        <form [formGroup]="form">
+          EDUCATION
+          <div formArrayName="edu">
+            <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
+              <div formGroupName="{{ie}}" class="edu">
+                <input type="text" formControlName="edetail">
+              </div>
+            </div>
+            <input type="button" (click)="addEduDetail()" value="Add educa details">
+          </div>
+          workXP
+          <div formArrayName="works">
+            <div *ngFor="let W of form['controls'].works['controls']; let iw=index">
+              <div formGroupName="{{iw}}" class="works">
+                <input type="text" formControlName="wtitle" >
+                <input type="text" formControlName="wdate">
+                <div formArrayName="wdetails">
+                  <div *ngFor="let W1 of W['controls'].wdetails['controls']; let iw1=index">
+                    <div formGroupName="{{iw1}}" class="wdetails">
+                      <input type="text" formControlName="wdetail" >
+                    </div>
+                  </div>
+                  <input type="button" (click)="addwWorkDetail(iw)" value="Add work details">
+                </div>
+              </div>
+            </div>
+            <input type="button" (click)="addWork()" value="Add work">
+          </div>
+          projects
+          <div formArrayName="projects">
+            <div *ngFor="let P of form['controls'].projects['controls']; let ip=index">
+              <div formGroupName="{{ip}}" class="projects">
+                <input type="text" formControlName="ptitle" >
+                <input type="text" formControlName="plink">
+                <input type="text" formControlName="pdate">
+                <div formArrayName="details">
+                  <div *ngFor="let D of P['controls'].details['controls']; let id=index">
+                    <div formGroupName="{{id}}" class="details">
+                      <input type="text" formControlName="detail" >
+                    </div>
+                  </div>
+                  <input type="button" (click)="addZ(ip)" value="Add details">
+                </div>
+              </div>
+            </div>
+            <input type="button" (click)="addY()" value="Add Project">
+          </div>
+          SKILLS
+          <div formArrayName="skills">
+            <div *ngFor="let S of form['controls'].skills['controls']; let is=index">
+              <div formGroupName="{{is}}" class="projects">
+                <input type="text" formControlName="skilltype" >
+                <input type="text" formControlName="relskills">
+              </div>
+            </div>
+            <input type="button" (click)="addskills()" value="Add Skills">
+          </div>
+          MISCELLANEOUS
+          <div formArrayName="misc">
+            <div *ngFor="let M of form['controls'].misc['controls']; let im=index">
+              <div formGroupName="{{im}}" class="misc">
+                <input type="text" formControlName="activity" >
+                <input type="text" formControlName="actdetail">
+              </div>
+            </div>
+            <input type="button" (click)="addmisc()" value="Add activity">
+          </div>
+          links
+          <div formArrayName="links">
+            <div *ngFor="let L of form['controls'].links['controls']; let il=index">
+              <div formGroupName="{{il}}" class="misc">
+                <input type="text" formControlName="link" >
+              </div>
+            </div>
+            <input type="button" (click)="addlink()" value="Add link">
+          </div>
+      </form>
+  
+                  <div id="allp" #one></div>
+			</div>
+		</div>
+	</div>
+</div>
+              
+  

@@ -1,0 +1,115 @@
+html,
+body,
+.bg-skew {
+  height: 650px;
+  z-index: -100;
+}
+
+body {
+  background: white;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+}
+
+.bg-skew {
+  background:url('https://wallpaperaccess.com/full/147251.jpg');
+  -webkit-transform: skew(0deg, -8deg);
+  transform: skew(0deg, -5deg);
+  padding: 200px 0;
+  margin-top: -200px;
+  box-shadow: 0 10px 20px -10px #273c75;
+  background-size: cover;
+}
+.main-div{
+	z-index: 1;
+	transform: skew(0deg, 5deg);
+}
+.main-heading-div h1{
+	color:white;
+	text-align: center;
+	width: 100%;
+	padding-top:70px;
+	font-size: 50px;
+}
+.main-heading-div span{
+	font-weight: 100;
+	font-family: verdana;
+}
+.main-heading-div p{
+	color:white;
+	width: 100%;
+	font-weight: thin;
+}
+.resume-list{
+	padding-top: 70px;
+}
+.resume-detail{
+	height: 300px;
+	margin:10px 0;
+}
+.resume-innerdetail{
+	width: 80%;
+	margin:auto;
+	border-radius: 17px;
+}
+.resume-innerdetail img{
+	border-radius: 17px;
+	box-shadow: 0 2px 5px grey;
+}
+.work-details{
+	width:90%;
+	position: relative;
+	height: 300px;
+	border-radius: 15px;
+	margin:5px auto;
+}
+.work-content{
+	position: absolute;
+	z-index: 100;
+	top:0px;
+	transition:all 0.5s ease;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+.work-content-inner{
+	width:75%;
+	margin:auto;
+	color:white;
+	text-align: center;
+	padding:10px 0;
+	overflow: hidden;
+}
+.work-content-inner p{
+	font-size: 18px;
+	font-weight: 700;
+	padding:20px 0;	
+}
+.work-content-inner a{
+	
+	padding:8px 25px;
+	color: skyblue;
+	font-weight: bold;
+	border-radius: 17px;
+	text-decoration: none;
+	position: absolute;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	bottom:0px;
+	left:0;
+	width: 100%;
+	background: linear-gradient(to right, #091629 , #1F437D, #091629);
+}
+.work-details .work-content{
+	opacity:0;
+}
+.work-details:hover .work-content,
+.work-details.active .work-content{
+	opacity: 1;
+	background:transparent;
+}
+.footer{
+	padding-top:250px;
+	padding-bottom: 30px;
+}

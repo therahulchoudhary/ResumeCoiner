@@ -1,0 +1,68 @@
+.main-div{
+	height: 100vh;
+	/* background: blue; */
+}
+.field-div{
+	overflow: scroll;
+	height: 100vh;
+	overflow-x:hidden;
+}
+.field-div h2{
+	text-align: center;
+	width: 100%;
+	padding: 25px 0;
+}
+.resume-form{
+	width:80%;
+	margin:auto;
+}
+.resume-form label,input{
+	width: 100%;
+}
+.main-div{
+    width:100%;
+}
+table,tr{
+    width:100%;
+}
+h1,h3,h4{
+    margin:0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+h3{
+    background-color:gainsboro;text-align:center;
+    font-family: 'Oswald', sans-serif;
+}
+ul{
+    padding-left: 18px;
+    margin:5px 0;
+    font-family: 'Aleo', serif;
+}
+.title{
+    display: inline;
+}
+.title-side-detail{
+    list-style: none;
+}
+.title-side-detail li{
+    text-align: center;
+    font-size: 12px;
+    color:darkgrey;
+    font-style: italic;
+}
+.title-side-detail li a{
+    color:#287bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.other-interest-a a{
+    text-decoration: none;
+    font-family: 'Aleo', serif;
+}
+span{
+    float: right;
+    font-style: italic;
+    font-size: 14px;
+    color: darkgrey;
+}
