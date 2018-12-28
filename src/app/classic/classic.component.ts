@@ -38,24 +38,24 @@ export class ClassicComponent implements OnInit {
   }
   initedu() {
     return this.fb.group({
-      'edetail': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'edetail': ['percentile - school - aggregate etc', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
   initskills() {
     return this.fb.group({
-      'skilltype': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
-      'relskills': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'skilltype': ['programming', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'relskills': ['c,c++,lorem,ipsum', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
   initmisc() {
     return this.fb.group({
-      'activity': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'activity': ['achievment/intrest/participation', [Validators.required, Validators.pattern('[0-9]{4}')]],
       'actdetail': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
   initlinks() {
     return this.fb.group({
-      'link': ['lorem ipsum doler sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'link': ['http://yashwantsoni.live', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
   addlink(){
@@ -76,9 +76,9 @@ export class ClassicComponent implements OnInit {
   }
   initY() {
     return this.fb.group({
-      'ptitle': ['project title', [Validators.required, Validators.pattern('[0-9]{4}')]],
-      'plink': ['link', [Validators.required, Validators.pattern('[0-9]{4}')]],
-      'pdate': ['date', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'ptitle': ['this-that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'plink': ['http://github.com/Resumecoiner', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'pdate': ['may 2018 - july 2018', [Validators.required, Validators.pattern('[0-9]{4}')]],
       'details': this.fb.array([
         this.initZ()
       ])
@@ -87,7 +87,7 @@ export class ClassicComponent implements OnInit {
   initWorks(){
     return this.fb.group({
       'wtitle': ['company name', [Validators.required, Validators.pattern('[0-9]{4}')]],
-      'wdate': ['date', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'wdate': ['may 2018 - july 2018', [Validators.required, Validators.pattern('[0-9]{4}')]],
       'wdetails': this.fb.array([
         this.initWorkdetail()
       ])
@@ -95,12 +95,12 @@ export class ClassicComponent implements OnInit {
   }
   initZ() {
     return this.fb.group({
-      'detail': ['lorem  ipsom doller sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'detail': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
     })
   }
   initWorkdetail(){
     return this.fb.group({
-      'wdetail': ['lorem  ipsom doller sit amet', [Validators.required, Validators.pattern('[0-9]{4}')]],
+      'wdetail': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
     })
   }
   addY() {

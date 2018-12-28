@@ -2,7 +2,7 @@
 	<div class="main-div">
 		<div class="row">
 			<div class="col-md-6">
-        <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
+        <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
    <div class="main-div" id="contentToConvert">
     <header>
             <table>   
@@ -18,32 +18,51 @@
     <hr>
     <div>
         <h3 >EDUCATION</h3>
+        <div *ngIf="form.value.edu">
         <ul>
-            <li>Bachelor of Technology in CSE from College of Engg. and Tech., Bikaner with an aggregate of 62% Marks.</li>
-            <li>Higher secondary from Yadav Bharti senior sec. school with 82.2%.</li>
+          <li  *ngIf="form.value.edu[0]">{{form.value.edu[0].edetail}}</li>
+          <li  *ngIf="form.value.edu[1]">{{form.value.edu[1].edetail}}</li>
+          <li  *ngIf="form.value.edu[2]">{{form.value.edu[2].edetail}}</li>
         </ul>
+        </div>
     </div>
     <div>
             <h3>WORK EXPERIENCE</h3>
-            <h4 class="title">ixxo.io</h4><span>(May 2018 - July 2018)</span>
+            <div *ngIf="form.value.works[0]">
+            <h4 class="title" *ngIf="form.value.works[0].wtitle">{{form.value.works[0].wtitle}}</h4><span *ngIf="form.value.works[0].wdate">( {{form.value.works[0].wdate}} )</span>
             <ul>
-            <li>Worked on frontend and backend of a web app with Angular and Express framework.</li>   
-            <li>Worked on mapping of data from smart contract using Web3Js also build rest APIs in Golang</li>
+            <li *ngIf="form.value.works[0].wdetails[0]">{{form.value.works[0].wdetails[0].wdetail}}</li> 
+            <li *ngIf="form.value.works[0].wdetails[1]">{{form.value.works[0].wdetails[1].wdetail}}</li> 
+            <li *ngIf="form.value.works[0].wdetails[2]">{{form.value.works[0].wdetails[2].wdetail}}</li>   
             </ul>
-            <h4 class="title">ixxo.io</h4><span>(May 2018 - July 2018)</span>
-            <ul>
-            <li>Worked on frontend and backend of a web app with Angular and Express framework.</li>   
-            <li>Worked on mapping of data from smart contract using Web3Js also build rest APIs in Golang</li>
-            </ul>
+            </div>
+            <div *ngIf="form.value.works[1]">
+              <h4 class="title" *ngIf="form.value.works[1].wtitle">{{form.value.works[1].wtitle}}</h4><span *ngIf="form.value.works[1].wdate">( {{form.value.works[1].wdate}} )</span>
+              <ul>
+              <li *ngIf="form.value.works[1].wdetails[0]">{{form.value.works[1].wdetails[0].wdetail}}</li> 
+              <li *ngIf="form.value.works[1].wdetails[1]">{{form.value.works[1].wdetails[1].wdetail}}</li> 
+              <li *ngIf="form.value.works[1].wdetails[2]">{{form.value.works[1].wdetails[2].wdetail}}</li>   
+              </ul>
+            </div>
+            <div *ngIf="form.value.works[2]">
+              <h4 class="title" *ngIf="form.value.works[2].wtitle">{{form.value.works[2].wtitle}}</h4><span *ngIf="form.value.works[2].wdate">( {{form.value.works[2].wdate}} )</span>
+              <ul>
+              <li *ngIf="form.value.works[2].wdetails[0]">{{form.value.works[2].wdetails[0].wdetail}}</li> 
+              <li *ngIf="form.value.works[2].wdetails[1]">{{form.value.works[2].wdetails[1].wdetail}}</li> 
+              <li *ngIf="form.value.works[2].wdetails[2]">{{form.value.works[2].wdetails[2].wdetail}}</li>   
+              </ul>
+            </div>
     </div>
     <div>
              <h3>PROJECTS</h3>
+             <div *ngIf="form.value.projects[0]">
              <h4 class="title" *ngIf="form.value.projects[0].ptitle">{{form.value.projects[0].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[0].plink}}" *ngIf="form.value.projects[0].plink">View</a></li><li *ngIf="form.value.projects[0].pdate">{{form.value.projects[0].pdate}}</li></ul></span>
             <ul>
               <li *ngIf="form.value.projects[0].details[0]">{{form.value.projects[0].details[0].detail}}</li>
               <li  *ngIf="form.value.projects[0].details[1]">{{form.value.projects[0].details[1].detail}}</li>
               <li  *ngIf="form.value.projects[0].details[2]">{{form.value.projects[0].details[2].detail}}</li> 
             </ul> 
+             </div>
             <div *ngIf="form.value.projects[1]">
             <h4 class="title" *ngIf="form.value.projects[1].ptitle">{{form.value.projects[1].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[1].plink}}" *ngIf="form.value.projects[1].plink">View</a></li><li *ngIf="form.value.projects[1].pdate">{{form.value.projects[1].pdate}}</li></ul></span>
             <ul>
@@ -65,22 +84,31 @@
     </div>
     <div>
         <h3>TECHNICAL SKILLS</h3>
-        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
-        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
-        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
-        Programming: Javascript, Go, C, C++, Java, PHP, Solidity, Python
+        <div *ngIf="form.value.skills[0]"><b>{{form.value.skills[0].skilltype}}</b>: {{form.value.skills[0].relskills}}</div>
+        <div *ngIf="form.value.skills[1]"><b>{{form.value.skills[1].skilltype}}</b>: {{form.value.skills[1].relskills}}</div>
+        <div *ngIf="form.value.skills[2]"><b>{{form.value.skills[2].skilltype}}</b>: {{form.value.skills[2].relskills}}</div>
+        <div *ngIf="form.value.skills[3]"><b>{{form.value.skills[3].skilltype}}</b>: {{form.value.skills[3].relskills}}</div>
+
+
     </div>
     <div>
             <h3>MISCELLANEOUS</h3>
-            Participation: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
-            Position of Responsibility: Javascript, Go, C, C++, Java, PHP, Solidity, Python<br>
-            Other Interests: Javascript, Go, C, C++, Java, PHP, Solidity, Python
+            <div *ngIf="form.value.misc[0]"><b>{{form.value.misc[0].activity}}</b>: {{form.value.misc[0].actdetail}}</div>
+            <div *ngIf="form.value.misc[1]"><b>{{form.value.misc[1].activity}}</b>: {{form.value.misc[1].actdetail}}</div>
+            <div *ngIf="form.value.misc[2]"><b>{{form.value.misc[2].activity}}</b>: {{form.value.misc[2].actdetail}}</div>
+            <div *ngIf="form.value.misc[3]"><b>{{form.value.misc[3].activity}}</b>: {{form.value.misc[3].actdetail}}</div>
+            <div *ngIf="form.value.misc[4]"><b>{{form.value.misc[4].activity}}</b>: {{form.value.misc[4].actdetail}}</div>
+            <div *ngIf="form.value.misc[5]"><b>{{form.value.misc[5].activity}}</b>: {{form.value.misc[5].actdetail}}</div>
+            <div *ngIf="form.value.misc[6]"><b>{{form.value.misc[6].activity}}</b>: {{form.value.misc[6].actdetail}}</div>
+
     </div>
     <div class="other-interest-a">
             <h3>Other Links</h3>
-            <a href="#">https://github.com/theyashwantsoni</a><br>
-            <a href="#">https://www.hackerrank.com/theyashwantsoni</a><br>
-            <a href="#">https://www.linkedin.com/in/theyashwantsoni</a>
+            <div *ngIf="form.value.links">
+            <a href="{{form.value.links[0].link}}" *ngIf="form.value.links[0]">{{form.value.links[0].link}}</a><br>
+            <a href="{{form.value.links[1].link}}" *ngIf="form.value.links[1]">{{form.value.links[1].link}}</a><br>
+            <a href="{{form.value.links[2].link}}" *ngIf="form.value.links[2]">{{form.value.links[2].link}}</a>
+            </div>
     </div>
 </div>
 
