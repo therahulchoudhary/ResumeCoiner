@@ -8,13 +8,19 @@ import { LiteComponent } from './lite/lite.component';
 import { LandingComponent } from './landing/landing.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import {GeneralService} from './general.service';
+=======
+import { NoobComponent } from './noob/noob.component';
+
+>>>>>>> f8d353a96f7d26207e08579e818171584a29933d
 @NgModule({
   declarations: [
     AppComponent,
     ClassicComponent,
     LiteComponent,
-    LandingComponent
+    LandingComponent,
+    NoobComponent
   ],
   imports: [
     HttpModule,

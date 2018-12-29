@@ -9,6 +9,10 @@
 .resume-side-div{
     padding:0;
 }
+.resume-side-div h1{
+    font-weight: bold;
+    font-family: 'Aleo',serif;
+}
 .resume-body{
     background: white;
     width: 80%;
@@ -20,7 +24,11 @@
     zoom:0.85;
 }
 .resume-body h3{
-    font-size: 22px;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.resume-body h4{
+    font-size: 18px;
 }
 .field-div{
 	overflow: scroll;
@@ -76,13 +84,20 @@
 }
 table,tr{
     width:100%;
+    color:black;
+    margin-bottom: 20px;
+}
+td{
+    padding:0px;
 }
 h1,h3,h4{
     margin:0px;
     font-family: 'Roboto', sans-serif;
 }
 h3{
-    background-color:gainsboro;text-align:center;
+    text-align:left;
+    /* border-bottom: 1px dotted black; */
+    font-weight: bold;
     font-family: 'Oswald', sans-serif;
 }
 ul{
@@ -120,6 +135,9 @@ span{
 .container-fluid{
     padding-left:0;
 }
-.final-btn{
-    /* display: none; */
+.workxp-detail{
+    padding-top:10px;
+}
+.project-detail{
+    padding-top:10px;
 }
