@@ -1,9 +1,9 @@
 .main-div{
     height: 100vh;
-    /* background:url('https://images.pexels.com/photos/1092364/pexels-photo-1092364.jpeg?cs=srgb&dl=bricks-brickwall-brickwork-1092364.jpg&fm=jpg'); */
+    background:url('https://ya-webdesign.com/images/scary-clipart-jungle-5.jpg');
     padding:0;
     margin:0;
-    background:lightgrey;
+    background-size: cover;
 }
 .resume-side-div{
     padding:0;
@@ -15,7 +15,8 @@
     padding:10px;
     margin-top:30px;
     height:90vh;
-    box-shadow: 0 10px 50px grey;
+    box-shadow: 0 10px 50px black;
+    zoom:0.85;
 }
 .resume-body h3{
     font-size: 22px;
@@ -32,12 +33,12 @@
     margin:auto;
     color:blue;
     padding:10px;
+    font-weight: 100;
 }
 .resume-form{
 	width:80%;
     margin:auto;
-    border:1px solid lightgrey;
-    box-shadow: 0 5px 10px lightgrey;
+    box-shadow: 0 5px 10px black;
     padding:10px 20px;
     background:white;
     border-top: 6px solid blueviolet;
@@ -57,9 +58,9 @@
     margin:4px 0;
     width: 100%;
 }
-.resume-form input[type=button]{
+.resume-form input[type=button],.resume-form button{
     background:transparent;
-    border:1px solid lightgrey;
+    border:0px solid lightgrey;
     color:white;
     border-radius: 6px;
     background:blue;
@@ -114,4 +115,7 @@ span{
     font-style: italic;
     font-size: 14px;
     color: darkgrey;
+}
+.container-fluid{
+    padding-left:0;
 }

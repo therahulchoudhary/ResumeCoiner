@@ -119,15 +119,10 @@
 
 
       </div>
-			<div class="col-md-6 field-div">
-        
-          
-         
-         
+			<div class="col-md-6 field-div">  
         <form [formGroup]="form" class="resume-form">
           <h1>Start Creating your Resume</h1>
-          <label >info</label>
-   
+          <label >Info</label>
           <input type="text" formControlName="ename">
           <input type="text" formControlName="clgname">
           <input type="text" formControlName="email">
@@ -171,13 +166,13 @@
                   <div *ngFor="let D of P['controls'].details['controls']; let id=index">
                     <div formGroupName="{{id}}" class="details">
                       <input type="text" formControlName="detail" >
-                      <button  type="button" (click)="deleteZ(id,ip)" style="color:red;">@@</button>
+                      <button  type="button" (click)="deleteZ(id,ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE DETAIL</button>
                     </div>
                   </div>
                   <input type="button" (click)="addZ(ip)" style="display:inline;float:left;margin-right:5px;" value="ADD DETAILS">
                 </div>
               </div>
-              <button  type="button" (click)="deleteY(ip)" style="color:red;">$$</button>
+              <button  type="button" (click)="deleteY(ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE PROJECT</button>
             </div>
             <input type="button" (click)="addY()" value="ADD PROJECT">
           </div>
@@ -211,8 +206,7 @@
             <input type="button" (click)="addlink()" value="ADD LINK">
           </div>
       </form>
-  
-                  <div id="allp" #one></div>
+      <div id="allp" #one></div>
 			</div>
 		</div>
 	</div>
