@@ -194,7 +194,11 @@ export class ClassicComponent implements OnInit {
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'block');
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'max-width', '50%');
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'flex', '50%');
-    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('final-btn')[0], 'display', 'none');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'width', '80%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'margin-top', '30px');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'margin', 'auto');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('blabla')[0], 'visibility', 'hidden');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('bblabla')[0], 'visibility', 'hidden');
   }
   dofuck(){
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'none');
@@ -203,7 +207,9 @@ export class ClassicComponent implements OnInit {
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'zoom', '1');
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'width', '100%');
     this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'margin-top', '0px');
-    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('final-btn')[0], 'display', 'block');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('blabla')[0], 'visibility', 'visible');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('bblabla')[0], 'visibility', 'visible');
+
   }
   getdata(){
 

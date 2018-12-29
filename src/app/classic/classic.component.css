@@ -124,8 +124,8 @@ span{
 .container-fluid{
     padding-left:0;
 }
-.final-btn{
-    /* display: none; */
+.blabla,.bblabla{
+    visibility: hidden;
 }
 .functioning-btn{
     background:blue;

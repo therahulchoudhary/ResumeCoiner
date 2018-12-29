@@ -13,6 +13,9 @@
     font-weight: bold;
     font-family: 'Aleo',serif;
 }
+.blabla,.bblabla{
+    visibility: hidden;
+}
 .resume-body{
     background: white;
     width: 80%;

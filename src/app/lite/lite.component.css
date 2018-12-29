@@ -9,6 +9,9 @@
 .resume-side-div{
     padding:0;
 }
+.blabla,.bblabla{
+    visibility: hidden;
+}
 .resume-body{
     background: white;
     width: 80%;
