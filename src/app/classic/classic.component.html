@@ -1,8 +1,8 @@
 <div class="container-fluid">
 	<div class="main-div">
 		<div class="row">
-			<div class="col-md-6">
-        <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
+	
+   
    
 			<div class="col-md-6 resume-side-div">
         <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
@@ -120,18 +120,19 @@
 
       </div>
 			<div class="col-md-6 field-div">
-        <form [formGroup]="form">
-          contact info
+        
+          
+         
+         
+        <form [formGroup]="form" class="resume-form">
+          <h1>Start Creating your Resume</h1>
+          <label >info</label>
    
           <input type="text" formControlName="ename">
           <input type="text" formControlName="clgname">
           <input type="text" formControlName="email">
           <input type="text" formControlName="phone">
           <input type="text" formControlName="personalweb">
-         
-          EDUCATION
-        <form [formGroup]="form" class="resume-form">
-          <h1>Start Creating your Resume</h1>
           <label>Education</label>
           <div formArrayName="edu">
             <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
@@ -216,5 +217,5 @@
 		</div>
 	</div>
 </div>
-              
+           
   
