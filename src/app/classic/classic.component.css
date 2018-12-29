@@ -1,8 +1,9 @@
 .main-div{
     height: 100vh;
-    background:url('https://images.pexels.com/photos/1092364/pexels-photo-1092364.jpeg?cs=srgb&dl=bricks-brickwall-brickwork-1092364.jpg&fm=jpg');
+    /* background:url('https://images.pexels.com/photos/1092364/pexels-photo-1092364.jpeg?cs=srgb&dl=bricks-brickwall-brickwork-1092364.jpg&fm=jpg'); */
     padding:0;
     margin:0;
+    background:lightgrey;
 }
 .resume-side-div{
     padding:0;
@@ -13,13 +14,17 @@
     margin:auto;
     padding:10px;
     margin-top:30px;
-    height:900px;
+    height:90vh;
     box-shadow: 0 10px 50px grey;
+}
+.resume-body h3{
+    font-size: 22px;
 }
 .field-div{
 	overflow: scroll;
 	height: 100vh;
     overflow-x:hidden;
+    padding:0;
 }
 .field-div h1{
 	text-align: center;
@@ -35,6 +40,7 @@
     box-shadow: 0 5px 10px lightgrey;
     padding:10px 20px;
     background:white;
+    border-top: 6px solid blueviolet;
 }
 .resume-form label{
     font-size: 22px;
