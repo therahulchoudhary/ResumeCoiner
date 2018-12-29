@@ -46,7 +46,7 @@ export class ClassicComponent implements OnInit {
       )
     });
   }
-  @ViewChild('one') d1:ElementRef;
+  @ViewChild('two') d1:ElementRef;
 
   ngAfterViewInit() {
     
@@ -173,6 +173,16 @@ export class ClassicComponent implements OnInit {
   deleteZ(id,ip){
     const control = (<FormArray>this.form.controls['projects']).at(ip).get('details') as FormArray;
     control.removeAt(id);
+  }
+  fuckback(){
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'block');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'max-width', '50%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'flex', '50%');
+  }
+  dofuck(){
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'none');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'max-width', '100%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'flex', '100%');
   }
   constructor(private fb: FormBuilder,private renderer: Renderer2) {
   }

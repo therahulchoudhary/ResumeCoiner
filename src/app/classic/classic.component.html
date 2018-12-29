@@ -1,10 +1,11 @@
 <div class="container-fluid">
 	<div class="main-div">
-		<div class="row">
+		<div class="row" #two>
 	
    
    
-			<div class="col-md-6 resume-side-div">
+			<div class="col-md-6 resume-side-div" id="left50">
+          <button (click)="fuckback()">edit more</button>
         <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
    <div class="resume-body" id="contentToConvert">
     <header>
@@ -119,7 +120,7 @@
 
 
       </div>
-			<div class="col-md-6 field-div">
+			<div class="col-md-6 field-div" id="right50">
         
           
          
@@ -214,7 +215,8 @@
   
                   <div id="allp" #one></div>
 			</div>
-		</div>
+    </div>
+    <button (click)="dofuck()">ready</button>
 	</div>
 </div>
            
