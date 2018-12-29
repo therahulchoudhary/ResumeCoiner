@@ -1,6 +1,7 @@
 
 import { Component, OnInit,ViewChild,ElementRef ,Renderer2} from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl,Validators } from '@angular/forms';
+import { GeneralService } from '../general.service';
 @Component({
   selector: 'app-noob',
   templateUrl: './noob.component.html',
@@ -46,7 +47,7 @@ export class NoobComponent implements OnInit {
       )
     });
   }
-  @ViewChild('one') d1:ElementRef;
+  @ViewChild('two') d1:ElementRef;
 
   ngAfterViewInit() {
     
@@ -56,31 +57,6 @@ export class NoobComponent implements OnInit {
       'edetail': ['percentile - school - aggregate etc', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
-  // initname(){
-  //   return this.fb.group({
-  //     'ename': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
-  //   })
-  // }
-  // initemail(){
-  //   return this.fb.group({
-  //     'email': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
-  //   })
-  // }
-  // initphone(){
-  //   return this.fb.group({
-  //     'phonw': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
-  //   })
-  // }
-  // initclgname(){
-  //   return this.fb.group({
-  //     'clgname': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
-  //   })
-  // }
-  // initweb(){
-  //   return this.fb.group({
-  //     'personalweb': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
-  //   })
-  // }
   initskills() {
     return this.fb.group({
       'skilltype': ['programming', [Validators.required, Validators.pattern('[0-9]{4}')]],
@@ -100,19 +76,51 @@ export class NoobComponent implements OnInit {
   }
   addlink(){
     const control = <FormArray>this.form.controls['links'];
-    control.push(this.initlinks());
+    if(control.value.length){
+      control.push(this.initlinks());
+    }
   }
   addskills(){
     const control = <FormArray>this.form.controls['skills'];
-    control.push(this.initskills());
+    if(control.value.length<5){
+      control.push(this.initskills());
+    }
+  }
+  deleteSkill(is){
+    const control = <FormArray>this.form.controls['skills'];
+    control.removeAt(is);
   }
   addmisc(){
     const control = <FormArray>this.form.controls['misc'];
-    control.push(this.initmisc());
+    if(control.value.length<7){
+      control.push(this.initmisc());
+    }
+  }
+  deletemisc(im){
+    const control = <FormArray>this.form.controls['misc'];
+    control.removeAt(im);
   }
   addEduDetail(){
     const control = <FormArray>this.form.controls['edu'];
-    control.push(this.initedu());
+    if(control.value.length<3){
+      control.push(this.initedu());
+    }
+  }
+  delEduDetail(ie){
+    const control = <FormArray>this.form.controls['edu'];
+    control.removeAt(ie);
+  }
+  deleteWork(iw){
+    const control = <FormArray>this.form.controls['works'];
+    control.removeAt(iw);
+  }
+  deleteWdetail(iw,iw1){
+    const control = (<FormArray>this.form.controls['works']).at(iw).get('wdetails') as FormArray;
+    control.removeAt(iw1);
+  }
+  deletelink(il){
+    const control = <FormArray>this.form.controls['links'];
+    control.removeAt(il);
   }
   initY() {
     return this.fb.group({
@@ -145,7 +153,7 @@ export class NoobComponent implements OnInit {
   }
   addY() {
     const control = <FormArray>this.form.controls['projects'];
-    if(control.value.length<7){
+    if(control.value.length<3){
       control.push(this.initY());
     }
    
@@ -156,25 +164,51 @@ export class NoobComponent implements OnInit {
   }
   addWork(){
     const control = <FormArray>this.form.controls['works'];
-    control.push(this.initWorks());
+    if(control.value.length<2){
+      control.push(this.initWorks());
+    }
   }
   addwWorkDetail(iw){
     const control = (<FormArray>this.form.controls['works']).at(iw).get('wdetails') as FormArray;
-    control.push(this.initWorkdetail());
+    if(control.value.length<3){
+      control.push(this.initWorkdetail());
+    }
+    
   }
   addZ(iy) {
    // console.log(iy);
     const control = (<FormArray>this.form.controls['projects']).at(iy).get('details') as FormArray;
-    control.push(this.initZ());
+    if(control.value.length<3){
+      control.push(this.initZ());  
+    }
     //console.log(this.d1.nativeElement.getElementsByClassName('list')[0]);
     // this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('lists')[0], 'display', 'block');
     // this.d1.nativeElement.getElementsByClassName('list')[0].insertAdjacentHTML('beforeend', '<li >{{{ form.value.Ys['+iy+'].Zs['+iy+'].Z }}}</li>');
   }
   deleteZ(id,ip){
     const control = (<FormArray>this.form.controls['projects']).at(ip).get('details') as FormArray;
+
     control.removeAt(id);
   }
-  constructor(private fb: FormBuilder,private renderer: Renderer2) {
+  fuckback(){
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'block');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'max-width', '50%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'flex', '50%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('final-btn')[0], 'display', 'none');
+  }
+  dofuck(){
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('field-div')[0], 'display', 'none');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'max-width', '100%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-side-div')[0], 'flex', '100%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'zoom', '1');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'width', '100%');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('resume-body')[0], 'margin-top', '0px');
+    this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('final-btn')[0], 'display', 'block');
+  }
+  getdata(){
+
+  }
+  constructor(private fb: FormBuilder,private renderer: Renderer2,private _userService:GeneralService) {
   }
 
 }

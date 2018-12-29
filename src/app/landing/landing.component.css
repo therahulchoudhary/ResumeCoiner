@@ -1,5 +1,3 @@
-html,
-body,
 .bg-skew {
   height: 650px;
   z-index: -100;
@@ -30,16 +28,21 @@ body {
 	text-align: center;
 	width: 100%;
 	padding-top:70px;
-	font-size: 50px;
+	font-family: 'Thasadith', sans-serif;
+	font-weight: bolder;
+	font-size: 80px;
 }
 .main-heading-div span{
 	font-weight: 100;
-	font-family: verdana;
+	font-family: 'Thasadith', sans-serif;
 }
 .main-heading-div p{
 	color:white;
 	width: 100%;
-	font-weight: thin;
+	font-weight: ;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Courier New', Courier, monospace;
 }
 .resume-list{
 	padding-top: 70px;
@@ -101,15 +104,19 @@ body {
 	width: 100%;
 	background: linear-gradient(to right, #091629 , #1F437D, #091629);
 }
-.work-details .work-content{
-	opacity:0;
-}
-.work-details:hover .work-content,
-.work-details.active .work-content{
-	opacity: 1;
-	background:transparent;
-}
 .footer{
-	padding-top:250px;
+	padding-top:300px;
 	padding-bottom: 30px;
+	text-align: center;
+}
+.footer a{
+	font-size: 20px;
+	color: #2B3778;
+}
+.footer-detail{
+	font-size: 24px;
+	font-family: 'Thasadith', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 130px;
 }

@@ -1,211 +1,262 @@
 <div class="container-fluid">
-	<div class="main-div">
-		<div class="row">
-	
-   
-   
-			<div class="col-md-6 resume-side-div">
-        <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
-   <div class="resume-body" id="contentToConvert">
-    <header>
-            <table>   
-                <tr>
-                    <td style="width:65%"><h1>{{ form.value.ename}}</h1></td><td style="width:35%;text-align: right;"><i class="fas fa-envelope"></i> {{form.value.email}}&#32;&#32; <i class="fas fa-phone"></i>    &#32;{{form.value.phone}}</td>
-                </tr>
-                <tr>
-                    <td >{{form.value.clgname}}</td>
-                    <td style="text-align:right;" ><a href="{{form.value.personalweb}}" style="color:#ece1e1;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i>{{form.value.personalweb}}</a></td> 
-                </tr>
-            </table>
-    </header>
-    <div>
-        <h3 >EDUCATION</h3>
-        <div *ngIf="form.value.edu">
-        <ul>
-          <li  *ngIf="form.value.edu[0]">{{form.value.edu[0].edetail}}</li>
-          <li  *ngIf="form.value.edu[1]">{{form.value.edu[1].edetail}}</li>
-          <li  *ngIf="form.value.edu[2]">{{form.value.edu[2].edetail}}</li>
-        </ul>
-        </div>
-    </div>
-    <div>
-            <h3>WORK EXPERIENCE</h3>
-            <div *ngIf="form.value.works[0]">
-            <h4 class="title" *ngIf="form.value.works[0].wtitle">{{form.value.works[0].wtitle}}</h4><span *ngIf="form.value.works[0].wdate">( {{form.value.works[0].wdate}} )</span>
-            <ul>
-            <li *ngIf="form.value.works[0].wdetails[0]">{{form.value.works[0].wdetails[0].wdetail}}</li> 
-            <li *ngIf="form.value.works[0].wdetails[1]">{{form.value.works[0].wdetails[1].wdetail}}</li> 
-            <li *ngIf="form.value.works[0].wdetails[2]">{{form.value.works[0].wdetails[2].wdetail}}</li>   
-            </ul>
-            </div>
-            <div *ngIf="form.value.works[1]">
-              <h4 class="title" *ngIf="form.value.works[1].wtitle">{{form.value.works[1].wtitle}}</h4><span *ngIf="form.value.works[1].wdate">( {{form.value.works[1].wdate}} )</span>
-              <ul>
-              <li *ngIf="form.value.works[1].wdetails[0]">{{form.value.works[1].wdetails[0].wdetail}}</li> 
-              <li *ngIf="form.value.works[1].wdetails[1]">{{form.value.works[1].wdetails[1].wdetail}}</li> 
-              <li *ngIf="form.value.works[1].wdetails[2]">{{form.value.works[1].wdetails[2].wdetail}}</li>   
-              </ul>
-            </div>
-            <div *ngIf="form.value.works[2]">
-              <h4 class="title" *ngIf="form.value.works[2].wtitle">{{form.value.works[2].wtitle}}</h4><span *ngIf="form.value.works[2].wdate">( {{form.value.works[2].wdate}} )</span>
-              <ul>
-              <li *ngIf="form.value.works[2].wdetails[0]">{{form.value.works[2].wdetails[0].wdetail}}</li> 
-              <li *ngIf="form.value.works[2].wdetails[1]">{{form.value.works[2].wdetails[1].wdetail}}</li> 
-              <li *ngIf="form.value.works[2].wdetails[2]">{{form.value.works[2].wdetails[2].wdetail}}</li>   
-              </ul>
-            </div>
-    </div>
-    <div>
-             <h3>PROJECTS</h3>
-             <div *ngIf="form.value.projects[0]">
-             <h4 class="title" *ngIf="form.value.projects[0].ptitle">{{form.value.projects[0].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[0].plink}}" *ngIf="form.value.projects[0].plink">View</a></li></ul></span>
-            <ul>
-              <li *ngIf="form.value.projects[0].details[0]">{{form.value.projects[0].details[0].detail}}</li>
-              <li  *ngIf="form.value.projects[0].details[1]">{{form.value.projects[0].details[1].detail}}</li>
-              <li  *ngIf="form.value.projects[0].details[2]">{{form.value.projects[0].details[2].detail}}</li> 
-            </ul> 
-             </div>
-            <div *ngIf="form.value.projects[1]">
-            <h4 class="title" *ngIf="form.value.projects[1].ptitle">{{form.value.projects[1].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[1].plink}}" *ngIf="form.value.projects[1].plink">View</a></li></ul></span>
-            <ul>
-              <li *ngIf="form.value.projects[1].details[0]">{{form.value.projects[1].details[0].detail}}</li>
-              <li  *ngIf="form.value.projects[1].details[1]">{{form.value.projects[1].details[1].detail}}</li>
-              <li  *ngIf="form.value.projects[1].details[2]">{{form.value.projects[1].details[2].detail}}</li> 
-            </ul>
+    <div class="main-div">
+        <button class="functioning-btn" (click)="fuckback()"><i class="fas fa-pencil-alt"></i> Edit Again</button>
+      <div class="row" #two>
+    
+     
+          
+        <div class="col-md-6 resume-side-div">
+          <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
+     <div class="resume-body" id="contentToConvert">
+      <header>
+              <table>   
+                  <tr>
+                      <td style="width:65%"><h1>{{ form.value.ename}}</h1></td><td style="width:35%;text-align: right;"><i class="fas fa-envelope"></i> {{form.value.email}}&#32;&#32; <i class="fas fa-phone"></i>    &#32;{{form.value.phone}}</td>
+                  </tr>
+                  <tr>
+                      <td >{{form.value.clgname}}</td>
+                      <td style="text-align:right;" ><a href="{{form.value.personalweb}}" style="color:#091f42;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i>{{form.value.personalweb}}</a></td> 
+                  </tr>
+              </table>
+      </header>
+      <hr>
+      <div>
+          <h3 >EDUCATION</h3>
+          <div *ngIf="form.value.edu">
+          <ul>
+            <li  *ngIf="form.value.edu[0]">{{form.value.edu[0].edetail}}</li>
+            <li  *ngIf="form.value.edu[1]">{{form.value.edu[1].edetail}}</li>
+            <li  *ngIf="form.value.edu[2]">{{form.value.edu[2].edetail}}</li>
+          </ul>
           </div>
-          <div *ngIf="form.value.projects[2]">
-            <h4 class="title" *ngIf="form.value.projects[2].ptitle">{{form.value.projects[2].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[2].plink}}" *ngIf="form.value.projects[2].plink">View</a></li></ul></span>
-            <ul>
-              <li *ngIf="form.value.projects[2].details[0]">{{form.value.projects[2].details[0].detail}}</li>
-              <li  *ngIf="form.value.projects[2].details[1]">{{form.value.projects[2].details[1].detail}}</li>
-              <li  *ngIf="form.value.projects[2].details[2]">{{form.value.projects[2].details[2].detail}}</li> 
-            </ul>
-          </div>
-
-            
-    </div>
-    <div>
-        <h3>TECHNICAL SKILLS</h3>
-        <div *ngIf="form.value.skills[0]"><b>{{form.value.skills[0].skilltype}}</b>: {{form.value.skills[0].relskills}}</div>
-        <div *ngIf="form.value.skills[1]"><b>{{form.value.skills[1].skilltype}}</b>: {{form.value.skills[1].relskills}}</div>
-        <div *ngIf="form.value.skills[2]"><b>{{form.value.skills[2].skilltype}}</b>: {{form.value.skills[2].relskills}}</div>
-        <div *ngIf="form.value.skills[3]"><b>{{form.value.skills[3].skilltype}}</b>: {{form.value.skills[3].relskills}}</div>
-
-
-    </div>
-    <div>
-            <h3>MISCELLANEOUS</h3>
-            <div *ngIf="form.value.misc[0]"><b>{{form.value.misc[0].activity}}</b>: {{form.value.misc[0].actdetail}}</div>
-            <div *ngIf="form.value.misc[1]"><b>{{form.value.misc[1].activity}}</b>: {{form.value.misc[1].actdetail}}</div>
-            <div *ngIf="form.value.misc[2]"><b>{{form.value.misc[2].activity}}</b>: {{form.value.misc[2].actdetail}}</div>
-            <div *ngIf="form.value.misc[3]"><b>{{form.value.misc[3].activity}}</b>: {{form.value.misc[3].actdetail}}</div>
-            <div *ngIf="form.value.misc[4]"><b>{{form.value.misc[4].activity}}</b>: {{form.value.misc[4].actdetail}}</div>
-            <div *ngIf="form.value.misc[5]"><b>{{form.value.misc[5].activity}}</b>: {{form.value.misc[5].actdetail}}</div>
-            <div *ngIf="form.value.misc[6]"><b>{{form.value.misc[6].activity}}</b>: {{form.value.misc[6].actdetail}}</div>
-
-    </div>
-    <div class="other-interest-a">
-            <h3>Other Links</h3>
-            <div *ngIf="form.value.links">
-            <a href="{{form.value.links[0].link}}" *ngIf="form.value.links[0]">{{form.value.links[0].link}}</a><br>
-            <a href="{{form.value.links[1].link}}" *ngIf="form.value.links[1]">{{form.value.links[1].link}}</a><br>
-            <a href="{{form.value.links[2].link}}" *ngIf="form.value.links[2]">{{form.value.links[2].link}}</a>
-            </div>
-    </div>
-</div>
-
-
-
-
       </div>
-			<div class="col-md-6 field-div">  
-        <form [formGroup]="form" class="resume-form">
-          <h1>Start Creating your Resume</h1>
-          <label >Info</label>
-          <input type="text" formControlName="ename">
-          <input type="text" formControlName="clgname">
-          <input type="text" formControlName="email">
-          <input type="text" formControlName="phone">
-          <input type="text" formControlName="personalweb">
-          <label>Education</label>
-          <div formArrayName="edu">
-            <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
-              <div formGroupName="{{ie}}" class="edu">
-                <input type="text" formControlName="edetail">
+      <div>
+              <h3>WORK EXPERIENCE</h3>
+              <div *ngIf="form.value.works[0]">
+              <h4 class="title" *ngIf="form.value.works[0].wtitle">{{form.value.works[0].wtitle}}</h4><span *ngIf="form.value.works[0].wdate">( {{form.value.works[0].wdate}} )</span>
+              <ul>
+              <li *ngIf="form.value.works[0].wdetails[0]">{{form.value.works[0].wdetails[0].wdetail}}</li> 
+              <li *ngIf="form.value.works[0].wdetails[1]">{{form.value.works[0].wdetails[1].wdetail}}</li> 
+              <li *ngIf="form.value.works[0].wdetails[2]">{{form.value.works[0].wdetails[2].wdetail}}</li>   
+              </ul>
               </div>
+              <div *ngIf="form.value.works[1]">
+                <h4 class="title" *ngIf="form.value.works[1].wtitle">{{form.value.works[1].wtitle}}</h4><span *ngIf="form.value.works[1].wdate">( {{form.value.works[1].wdate}} )</span>
+                <ul>
+                <li *ngIf="form.value.works[1].wdetails[0]">{{form.value.works[1].wdetails[0].wdetail}}</li> 
+                <li *ngIf="form.value.works[1].wdetails[1]">{{form.value.works[1].wdetails[1].wdetail}}</li> 
+                <li *ngIf="form.value.works[1].wdetails[2]">{{form.value.works[1].wdetails[2].wdetail}}</li>   
+                </ul>
+              </div>
+              <div *ngIf="form.value.works[2]">
+                <h4 class="title" *ngIf="form.value.works[2].wtitle">{{form.value.works[2].wtitle}}</h4><span *ngIf="form.value.works[2].wdate">( {{form.value.works[2].wdate}} )</span>
+                <ul>
+                <li *ngIf="form.value.works[2].wdetails[0]">{{form.value.works[2].wdetails[0].wdetail}}</li> 
+                <li *ngIf="form.value.works[2].wdetails[1]">{{form.value.works[2].wdetails[1].wdetail}}</li> 
+                <li *ngIf="form.value.works[2].wdetails[2]">{{form.value.works[2].wdetails[2].wdetail}}</li>   
+                </ul>
+              </div>
+      </div>
+      <div>
+               <h3>PROJECTS</h3>
+               <div *ngIf="form.value.projects[0]">
+               <h4 class="title" *ngIf="form.value.projects[0].ptitle">{{form.value.projects[0].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[0].plink}}" *ngIf="form.value.projects[0].plink">View</a></li><li *ngIf="form.value.projects[0].pdate">{{form.value.projects[0].pdate}}</li></ul></span>
+              <ul>
+                <li *ngIf="form.value.projects[0].details[0]">{{form.value.projects[0].details[0].detail}}</li>
+                <li  *ngIf="form.value.projects[0].details[1]">{{form.value.projects[0].details[1].detail}}</li>
+                <li  *ngIf="form.value.projects[0].details[2]">{{form.value.projects[0].details[2].detail}}</li> 
+              </ul> 
+               </div>
+              <div *ngIf="form.value.projects[1]">
+              <h4 class="title" *ngIf="form.value.projects[1].ptitle">{{form.value.projects[1].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[1].plink}}" *ngIf="form.value.projects[1].plink">View</a></li><li *ngIf="form.value.projects[1].pdate">{{form.value.projects[1].pdate}}</li></ul></span>
+              <ul>
+                <li *ngIf="form.value.projects[1].details[0]">{{form.value.projects[1].details[0].detail}}</li>
+                <li  *ngIf="form.value.projects[1].details[1]">{{form.value.projects[1].details[1].detail}}</li>
+                <li  *ngIf="form.value.projects[1].details[2]">{{form.value.projects[1].details[2].detail}}</li> 
+              </ul>
             </div>
-            <input type="button" (click)="addEduDetail()" value="ADD EDUCATION DETAIL">
-          </div>
-          <label>Work Experience</label>
-          <div formArrayName="works">
-            <div *ngFor="let W of form['controls'].works['controls']; let iw=index">
-              <div formGroupName="{{iw}}" class="works">
-                <input type="text" formControlName="wtitle" >
-                <input type="text" formControlName="wdate">
-                <div formArrayName="wdetails">
-                  <div *ngFor="let W1 of W['controls'].wdetails['controls']; let iw1=index">
-                    <div formGroupName="{{iw1}}" class="wdetails">
-                      <input type="text" formControlName="wdetail" >
-                    </div>
-                  </div>
-                  <input type="button" (click)="addwWorkDetail(iw)" style="display:inline;float:left;margin-right:5px;" value="ADD WORK DETAILS">
+            <div *ngIf="form.value.projects[2]">
+              <h4 class="title" *ngIf="form.value.projects[2].ptitle">{{form.value.projects[2].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[2].plink}}" *ngIf="form.value.projects[2].plink">View</a></li><li *ngIf="form.value.projects[2].pdate">{{form.value.projects[2].pdate}}</li></ul></span>
+              <ul>
+                <li *ngIf="form.value.projects[2].details[0]">{{form.value.projects[2].details[0].detail}}</li>
+                <li  *ngIf="form.value.projects[2].details[1]">{{form.value.projects[2].details[1].detail}}</li>
+                <li  *ngIf="form.value.projects[2].details[2]">{{form.value.projects[2].details[2].detail}}</li> 
+              </ul>
+            </div>
+            <div *ngIf="form.value.projects[3]">
+                <h4 class="title" *ngIf="form.value.projects[3].ptitle">{{form.value.projects[3].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[3].plink}}" *ngIf="form.value.projects[3].plink">View</a></li><li *ngIf="form.value.projects[3].pdate">{{form.value.projects[3].pdate}}</li></ul></span>
+                <ul>
+                  <li *ngIf="form.value.projects[3].details[0]">{{form.value.projects[3].details[0].detail}}</li>
+                  <li  *ngIf="form.value.projects[3].details[1]">{{form.value.projects[3].details[1].detail}}</li>
+                  <li  *ngIf="form.value.projects[3].details[2]">{{form.value.projects[3].details[2].detail}}</li> 
+                </ul>
+            </div>
+            <div *ngIf="form.value.projects[4]">
+                <h4 class="title" *ngIf="form.value.projects[4].ptitle">{{form.value.projects[4].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[4].plink}}" *ngIf="form.value.projects[4].plink">View</a></li><li *ngIf="form.value.projects[4].pdate">{{form.value.projects[4].pdate}}</li></ul></span>
+                <ul>
+                  <li *ngIf="form.value.projects[4].details[0]">{{form.value.projects[4].details[0].detail}}</li>
+                  <li  *ngIf="form.value.projects[4].details[1]">{{form.value.projects[4].details[1].detail}}</li>
+                  <li  *ngIf="form.value.projects[4].details[2]">{{form.value.projects[4].details[2].detail}}</li> 
+                </ul>
+            </div>
+            <div *ngIf="form.value.projects[5]">
+                <h4 class="title" *ngIf="form.value.projects[5].ptitle">{{form.value.projects[5].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[5].plink}}" *ngIf="form.value.projects[5].plink">View</a></li><li *ngIf="form.value.projects[5].pdate">{{form.value.projects[5].pdate}}</li></ul></span>
+                <ul>
+                  <li *ngIf="form.value.projects[5].details[0]">{{form.value.projects[5].details[0].detail}}</li>
+                  <li  *ngIf="form.value.projects[5].details[1]">{{form.value.projects[5].details[1].detail}}</li>
+                  <li  *ngIf="form.value.projects[5].details[2]">{{form.value.projects[5].details[2].detail}}</li> 
+                </ul>
+            </div>
+            <div *ngIf="form.value.projects[6]">
+                <h4 class="title" *ngIf="form.value.projects[6].ptitle">{{form.value.projects[6].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[6].plink}}" *ngIf="form.value.projects[6].plink">View</a></li><li *ngIf="form.value.projects[6].pdate">{{form.value.projects[6].pdate}}</li></ul></span>
+                <ul>
+                  <li *ngIf="form.value.projects[6].details[0]">{{form.value.projects[6].details[0].detail}}</li>
+                  <li  *ngIf="form.value.projects[6].details[1]">{{form.value.projects[6].details[1].detail}}</li>
+                  <li  *ngIf="form.value.projects[6].details[2]">{{form.value.projects[6].details[2].detail}}</li> 
+                </ul>
+            </div>
+  
+              
+      </div>
+      <div>
+          <h3>TECHNICAL SKILLS</h3>
+          <div *ngIf="form.value.skills[0]"><b>{{form.value.skills[0].skilltype}}</b>: {{form.value.skills[0].relskills}}</div>
+          <div *ngIf="form.value.skills[1]"><b>{{form.value.skills[1].skilltype}}</b>: {{form.value.skills[1].relskills}}</div>
+          <div *ngIf="form.value.skills[2]"><b>{{form.value.skills[2].skilltype}}</b>: {{form.value.skills[2].relskills}}</div>
+          <div *ngIf="form.value.skills[3]"><b>{{form.value.skills[3].skilltype}}</b>: {{form.value.skills[3].relskills}}</div>
+          <div *ngIf="form.value.skills[4]"><b>{{form.value.skills[4].skilltype}}</b>: {{form.value.skills[4].relskills}}</div>
+  
+  
+      </div>
+      <div>
+              <h3>MISCELLANEOUS</h3>
+              <div *ngIf="form.value.misc[0]"><b>{{form.value.misc[0].activity}}</b>: {{form.value.misc[0].actdetail}}</div>
+              <div *ngIf="form.value.misc[1]"><b>{{form.value.misc[1].activity}}</b>: {{form.value.misc[1].actdetail}}</div>
+              <div *ngIf="form.value.misc[2]"><b>{{form.value.misc[2].activity}}</b>: {{form.value.misc[2].actdetail}}</div>
+              <div *ngIf="form.value.misc[3]"><b>{{form.value.misc[3].activity}}</b>: {{form.value.misc[3].actdetail}}</div>
+              <div *ngIf="form.value.misc[4]"><b>{{form.value.misc[4].activity}}</b>: {{form.value.misc[4].actdetail}}</div>
+              <div *ngIf="form.value.misc[5]"><b>{{form.value.misc[5].activity}}</b>: {{form.value.misc[5].actdetail}}</div>
+              <div *ngIf="form.value.misc[6]"><b>{{form.value.misc[6].activity}}</b>: {{form.value.misc[6].actdetail}}</div>
+  
+      </div>
+      <div class="other-interest-a">
+              <h3>Other Links</h3>
+              <div *ngIf="form.value.links">
+              <a href="{{form.value.links[0].link}}" *ngIf="form.value.links[0]">{{form.value.links[0].link}}</a><br>
+              <a href="{{form.value.links[1].link}}" *ngIf="form.value.links[1]">{{form.value.links[1].link}}</a><br>
+              <a href="{{form.value.links[2].link}}" *ngIf="form.value.links[2]">{{form.value.links[2].link}}</a>
+              </div>
+      </div>
+  </div>
+  
+  
+  
+  
+        </div>
+        <div class="col-md-6 field-div" id="right50">
+          <form [formGroup]="form" class="resume-form">
+            <h1>Start Creating your Resume</h1>
+            <label >Info</label>
+            <input type="text" formControlName="ename">
+            <input type="text" formControlName="clgname">
+            <input type="text" formControlName="email">
+            <input type="text" formControlName="phone">
+            <input type="text" formControlName="personalweb">
+            <label>Education</label>
+            <div formArrayName="edu">
+              <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
+                <div formGroupName="{{ie}}" class="edu">
+                  <input type="text" formControlName="edetail">
                 </div>
+                <button  type="button" (click)="delEduDetail(ie)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE DETAIL</button>
               </div>
+              <input type="button" (click)="addEduDetail()" value="ADD EDUCATION DETAIL">
             </div>
-            <input type="button" (click)="addWork()" value="ADD WORK">
-          </div>
-          <label>Projects</label>
-          <div formArrayName="projects">
-            <div *ngFor="let P of form['controls'].projects['controls']; let ip=index">
-              <div formGroupName="{{ip}}" class="projects">
-                <input type="text" formControlName="ptitle" >
-                <input type="text" formControlName="plink">
-                <div formArrayName="details">
-                  <div *ngFor="let D of P['controls'].details['controls']; let id=index">
-                    <div formGroupName="{{id}}" class="details">
-                      <input type="text" formControlName="detail" >
-                      <button  type="button" (click)="deleteZ(id,ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE DETAIL</button>
+            <label>Work Experience</label>
+            <div formArrayName="works">
+              <div *ngFor="let W of form['controls'].works['controls']; let iw=index">
+                <div formGroupName="{{iw}}" class="works">
+                  <input type="text" formControlName="wtitle" >
+                  <input type="text" formControlName="wdate">
+  
+                  <div formArrayName="wdetails">
+                    <div *ngFor="let W1 of W['controls'].wdetails['controls']; let iw1=index">
+                      <div formGroupName="{{iw1}}" class="wdetails">
+                        <input type="text" formControlName="wdetail" >
+                      </div>
+                      <button  type="button" (click)="deleteWdetail(iw,iw1)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE DETAIL</button>
+  
                     </div>
+                    <input type="button" (click)="addwWorkDetail(iw)" style="display:inline;float:left;margin-right:5px;" value="ADD WORK DETAILS">
                   </div>
-                  <input type="button" (click)="addZ(ip)" style="display:inline;float:left;margin-right:5px;" value="ADD DETAILS">
                 </div>
+                <button  type="button" (click)="deleteWork(iw)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE WORK</button>
+  
               </div>
-              <button  type="button" (click)="deleteY(ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE PROJECT</button>
+              <input type="button" (click)="addWork()" value="ADD WORK">
             </div>
-            <input type="button" (click)="addY()" value="ADD PROJECT">
-          </div>
-          <label>Skills</label>
-          <div formArrayName="skills">
-            <div *ngFor="let S of form['controls'].skills['controls']; let is=index">
-              <div formGroupName="{{is}}" class="projects">
-                <input type="text" formControlName="skilltype" >
-                <input type="text" formControlName="relskills">
+            <label>Projects</label>
+            <div formArrayName="projects">
+              <div *ngFor="let P of form['controls'].projects['controls']; let ip=index">
+                <div formGroupName="{{ip}}" class="projects">
+                  <input type="text" formControlName="ptitle" >
+                  <input type="text" formControlName="plink">
+                  <input type="text" formControlName="pdate">
+                  <div formArrayName="details">
+                    <div *ngFor="let D of P['controls'].details['controls']; let id=index">
+                      <div formGroupName="{{id}}" class="details">
+                        <input type="text" formControlName="detail" >
+                        <button  type="button" (click)="deleteZ(id,ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE DETAIL</button>
+                      </div>
+                    </div>
+                    <input type="button" (click)="addZ(ip)" style="display:inline;float:left;margin-right:5px;" value="ADD DETAILS">
+                  </div>
+                </div>
+                <button  type="button" (click)="deleteY(ip)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE PROJECT</button>
               </div>
+              <input type="button" (click)="addY()" value="ADD PROJECT">
             </div>
-            <input type="button" (click)="addskills()" value="ADD SKILLS">
-          </div>
-          <label>Miscellaneous</label>
-          <div formArrayName="misc">
-            <div *ngFor="let M of form['controls'].misc['controls']; let im=index">
-              <div formGroupName="{{im}}" class="misc">
-                <input type="text" formControlName="activity" >
-                <input type="text" formControlName="actdetail">
+            <label>Skills</label>
+            <div formArrayName="skills">
+              <div *ngFor="let S of form['controls'].skills['controls']; let is=index">
+                <div formGroupName="{{is}}" class="projects">
+                  <input type="text" formControlName="skilltype" >
+                  <input type="text" formControlName="relskills">
+                </div>
+                <button  type="button" (click)="deleteSkill(is)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE SKILL</button>
+  
               </div>
+              <input type="button" (click)="addskills()" value="ADD SKILLS">
             </div>
-            <input type="button" (click)="addmisc()" value="ADD ACTIVITY">
-          </div>
-          <label>Other Links</label>
-          <div formArrayName="links">
-            <div *ngFor="let L of form['controls'].links['controls']; let il=index">
-              <div formGroupName="{{il}}" class="misc">
-                <input type="text" formControlName="link" >
+            <label>Miscellaneous</label>
+            <div formArrayName="misc">
+              <div *ngFor="let M of form['controls'].misc['controls']; let im=index">
+                <div formGroupName="{{im}}" class="misc">
+                  <input type="text" formControlName="activity" >
+                  <input type="text" formControlName="actdetail">
+                </div>
+                <button  type="button" (click)="deletemisc(im)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE ACTIVITY</button>
               </div>
+              <input type="button" (click)="addmisc()" value="ADD ACTIVITY">
             </div>
-            <input type="button" (click)="addlink()" value="ADD LINK">
-          </div>
-      </form>
-      <div id="allp" #one></div>
-			</div>
-		</div>
-	</div>
-</div>
+            <label>OTHER LINKS</label>
+            <div formArrayName="links">
+              <div *ngFor="let L of form['controls'].links['controls']; let il=index">
+                <div formGroupName="{{il}}" class="misc">
+                  <input type="text" formControlName="link" >
+                </div>
+                <button  type="button" (click)="deletelink(il)" style="color:white;background:#D13734;display: inline;float: left;margin-right:4px;"><i class="fas fa-trash"></i> DELETE LINK</button>
+  
+              </div>
+              <input type="button" (click)="addlink()" value="ADD LINK">
+            </div>
+        </form>
+        <div id="allp" #one></div>
+        </div>
+      </div>
+      <button class="functioning-btn" (click)="dofuck()"><i class="fas fa-check"></i> READY</button>
+      <button class="functioning-btn" onclick="printf()" (click)="getdata()"><i class="fas fa-cloud-download-alt"></i> GET PDF</button>
+    </div>
+  </div>
+             
+    

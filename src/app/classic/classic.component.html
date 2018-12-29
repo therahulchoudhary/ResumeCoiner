@@ -1,9 +1,10 @@
 <div class="container-fluid">
 	<div class="main-div">
+      <button class="functioning-btn" (click)="fuckback()"><i class="fas fa-pencil-alt"></i> Edit Again</button>
 		<div class="row" #two>
 	
    
-   
+        
 			<div class="col-md-6 resume-side-div">
         <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
    <div class="resume-body" id="contentToConvert">
@@ -253,9 +254,11 @@
       <div id="allp" #one></div>
 			</div>
     </div>
-    <button (click)="dofuck()">ready</button>
-    <button onclick="printf()" (click)="getdata()" class="final-btn">getpdf</button>
-	</div>
+    <div style="width:100%;text-align:center;padding:20px 0;">
+      <button class="functioning-btn" style="margin-right:15px;" (click)="dofuck()"><i class="fas fa-tv"></i> FULL SCREEN</button>
+      <button class="functioning-btn" onclick="printf()" (click)="getdata()"><i class="fas fa-cloud-download-alt"></i> GET PDF</button>
+    </div>
+  </div>
 </div>
            
   
