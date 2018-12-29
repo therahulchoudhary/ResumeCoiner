@@ -1,17 +1,20 @@
 <div class="container-fluid">
 	<div class="main-div">
 		<div class="row">
+	
+   
+   
 			<div class="col-md-6 resume-side-div">
         <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
    <div class="resume-body" id="contentToConvert">
     <header>
             <table>   
                 <tr>
-                    <td style="width:65%"><h1>YASHWANT SONI</h1></td><td style="width:35%;text-align: right;"><i class="fas fa-envelope"></i> yashwantsoni009@gmail.com &#32;&#32; <i class="fas fa-phone"></i>    &#32;(+91)838-798-7009</td>
+                    <td style="width:65%"><h1>{{ form.value.ename}}</h1></td><td style="width:35%;text-align: right;"><i class="fas fa-envelope"></i> {{form.value.email}}&#32;&#32; <i class="fas fa-phone"></i>    &#32;{{form.value.phone}}</td>
                 </tr>
                 <tr>
-                    <td >University College of Engineering and Technology, Bikaner</td>
-                    <td style="text-align:right;" ><a href="http://yashwantsoni.live" style="color:#091f42;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i> https://yashwantsoni.live</a></td> 
+                    <td >{{form.value.clgname}}</td>
+                    <td style="text-align:right;" ><a href="{{form.value.personalweb}}" style="color:#091f42;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i>{{form.value.personalweb}}</a></td> 
                 </tr>
             </table>
     </header>
@@ -117,8 +120,19 @@
 
       </div>
 			<div class="col-md-6 field-div">
+        
+          
+         
+         
         <form [formGroup]="form" class="resume-form">
           <h1>Start Creating your Resume</h1>
+          <label >info</label>
+   
+          <input type="text" formControlName="ename">
+          <input type="text" formControlName="clgname">
+          <input type="text" formControlName="email">
+          <input type="text" formControlName="phone">
+          <input type="text" formControlName="personalweb">
           <label>Education</label>
           <div formArrayName="edu">
             <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
@@ -157,11 +171,13 @@
                   <div *ngFor="let D of P['controls'].details['controls']; let id=index">
                     <div formGroupName="{{id}}" class="details">
                       <input type="text" formControlName="detail" >
+                      <button  type="button" (click)="deleteZ(id,ip)" style="color:red;">@@</button>
                     </div>
                   </div>
                   <input type="button" (click)="addZ(ip)" style="display:inline;float:left;margin-right:5px;" value="ADD DETAILS">
                 </div>
               </div>
+              <button  type="button" (click)="deleteY(ip)" style="color:red;">$$</button>
             </div>
             <input type="button" (click)="addY()" value="ADD PROJECT">
           </div>
@@ -201,5 +217,5 @@
 		</div>
 	</div>
 </div>
-              
+           
   

@@ -28,7 +28,22 @@ export class ClassicComponent implements OnInit {
       ]),
       'links':this.fb.array([
         this.initlinks() 
-      ])
+      ]),
+      'ename':this.fb.control(
+        'john snow'
+      ),
+      'clgname':this.fb.control(
+        'winterfell'
+      ),
+      'email':this.fb.control(
+        'johnsnow@knightwatch.com'
+      ),
+      'phone':this.fb.control(
+        '8888888888'
+      ),
+      'personalweb':this.fb.control(
+        'amItargeriyan.com'
+      )
     });
   }
   @ViewChild('one') d1:ElementRef;
@@ -41,6 +56,31 @@ export class ClassicComponent implements OnInit {
       'edetail': ['percentile - school - aggregate etc', [Validators.required, Validators.pattern('[0-9]{4}')]],
     });
   }
+  // initname(){
+  //   return this.fb.group({
+  //     'ename': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+  //   })
+  // }
+  // initemail(){
+  //   return this.fb.group({
+  //     'email': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+  //   })
+  // }
+  // initphone(){
+  //   return this.fb.group({
+  //     'phonw': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+  //   })
+  // }
+  // initclgname(){
+  //   return this.fb.group({
+  //     'clgname': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+  //   })
+  // }
+  // initweb(){
+  //   return this.fb.group({
+  //     'personalweb': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
+  //   })
+  // }
   initskills() {
     return this.fb.group({
       'skilltype': ['programming', [Validators.required, Validators.pattern('[0-9]{4}')]],
@@ -70,7 +110,7 @@ export class ClassicComponent implements OnInit {
     const control = <FormArray>this.form.controls['misc'];
     control.push(this.initmisc());
   }
-  addEduDetail(ie){
+  addEduDetail(){
     const control = <FormArray>this.form.controls['edu'];
     control.push(this.initedu());
   }
@@ -92,7 +132,7 @@ export class ClassicComponent implements OnInit {
         this.initWorkdetail()
       ])
     })
-  }
+  } 
   initZ() {
     return this.fb.group({
       'detail': ['did this did that', [Validators.required, Validators.pattern('[0-9]{4}')]],
@@ -105,7 +145,14 @@ export class ClassicComponent implements OnInit {
   }
   addY() {
     const control = <FormArray>this.form.controls['projects'];
-    control.push(this.initY());
+    if(control.value.length<7){
+      control.push(this.initY());
+    }
+   
+  }
+  deleteY(ip){
+    const control = <FormArray>this.form.controls['projects'];
+    control.removeAt(ip);
   }
   addWork(){
     const control = <FormArray>this.form.controls['works'];
@@ -123,7 +170,10 @@ export class ClassicComponent implements OnInit {
     // this.renderer.setStyle(this.d1.nativeElement.getElementsByClassName('lists')[0], 'display', 'block');
     // this.d1.nativeElement.getElementsByClassName('list')[0].insertAdjacentHTML('beforeend', '<li >{{{ form.value.Ys['+iy+'].Zs['+iy+'].Z }}}</li>');
   }
-
+  deleteZ(id,ip){
+    const control = (<FormArray>this.form.controls['projects']).at(ip).get('details') as FormArray;
+    control.removeAt(id);
+  }
   constructor(private fb: FormBuilder,private renderer: Renderer2) {
   }
 
