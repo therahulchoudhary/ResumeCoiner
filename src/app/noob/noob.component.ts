@@ -2,11 +2,11 @@
 import { Component, OnInit,ViewChild,ElementRef ,Renderer2} from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl,Validators } from '@angular/forms';
 @Component({
-  selector: 'app-lite',
-  templateUrl: './lite.component.html',
-  styleUrls: ['./lite.component.css']
+  selector: 'app-noob',
+  templateUrl: './noob.component.html',
+  styleUrls: ['./noob.component.css']
 })
-export class LiteComponent implements OnInit {
+export class NoobComponent implements OnInit {
  
   form: FormGroup;
   ngOnInit() {

@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                     <td >{{form.value.clgname}}</td>
-                    <td style="text-align:right;" ><a href="{{form.value.personalweb}}" style="color:#ece1e1;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i>{{form.value.personalweb}}</a></td> 
+                    <td style="text-align:right;" ><a href="{{form.value.personalweb}}" style="color:black;text-decoration:none;font-weight:bold;"><i class="fas fa-globe-asia"></i>{{form.value.personalweb}}</a></td> 
                 </tr>
             </table>
     </header>
@@ -28,9 +28,10 @@
         </ul>
         </div>
     </div>
+    <br>
     <div>
             <h3>WORK EXPERIENCE</h3>
-            <div *ngIf="form.value.works[0]">
+            <div *ngIf="form.value.works[0]" class="workxp-detail">
             <h4 class="title" *ngIf="form.value.works[0].wtitle">{{form.value.works[0].wtitle}}</h4><span *ngIf="form.value.works[0].wdate">( {{form.value.works[0].wdate}} )</span>
             <ul>
             <li *ngIf="form.value.works[0].wdetails[0]">{{form.value.works[0].wdetails[0].wdetail}}</li> 
@@ -38,7 +39,7 @@
             <li *ngIf="form.value.works[0].wdetails[2]">{{form.value.works[0].wdetails[2].wdetail}}</li>   
             </ul>
             </div>
-            <div *ngIf="form.value.works[1]">
+            <div *ngIf="form.value.works[1]" class="workxp-detail">
               <h4 class="title" *ngIf="form.value.works[1].wtitle">{{form.value.works[1].wtitle}}</h4><span *ngIf="form.value.works[1].wdate">( {{form.value.works[1].wdate}} )</span>
               <ul>
               <li *ngIf="form.value.works[1].wdetails[0]">{{form.value.works[1].wdetails[0].wdetail}}</li> 
@@ -46,7 +47,7 @@
               <li *ngIf="form.value.works[1].wdetails[2]">{{form.value.works[1].wdetails[2].wdetail}}</li>   
               </ul>
             </div>
-            <div *ngIf="form.value.works[2]">
+            <div *ngIf="form.value.works[2]" class="workxp-detail">
               <h4 class="title" *ngIf="form.value.works[2].wtitle">{{form.value.works[2].wtitle}}</h4><span *ngIf="form.value.works[2].wdate">( {{form.value.works[2].wdate}} )</span>
               <ul>
               <li *ngIf="form.value.works[2].wdetails[0]">{{form.value.works[2].wdetails[0].wdetail}}</li> 
@@ -55,9 +56,10 @@
               </ul>
             </div>
     </div>
+    <br>
     <div>
              <h3>PROJECTS</h3>
-             <div *ngIf="form.value.projects[0]">
+             <div *ngIf="form.value.projects[0]" class="project-detail">
              <h4 class="title" *ngIf="form.value.projects[0].ptitle">{{form.value.projects[0].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[0].plink}}" *ngIf="form.value.projects[0].plink">View</a></li></ul></span>
             <ul>
               <li *ngIf="form.value.projects[0].details[0]">{{form.value.projects[0].details[0].detail}}</li>
@@ -65,7 +67,7 @@
               <li  *ngIf="form.value.projects[0].details[2]">{{form.value.projects[0].details[2].detail}}</li> 
             </ul> 
              </div>
-            <div *ngIf="form.value.projects[1]">
+            <div *ngIf="form.value.projects[1]" class="project-detail">
             <h4 class="title" *ngIf="form.value.projects[1].ptitle">{{form.value.projects[1].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[1].plink}}" *ngIf="form.value.projects[1].plink">View</a></li></ul></span>
             <ul>
               <li *ngIf="form.value.projects[1].details[0]">{{form.value.projects[1].details[0].detail}}</li>
@@ -73,7 +75,7 @@
               <li  *ngIf="form.value.projects[1].details[2]">{{form.value.projects[1].details[2].detail}}</li> 
             </ul>
           </div>
-          <div *ngIf="form.value.projects[2]">
+          <div *ngIf="form.value.projects[2]" class="project-detail">
             <h4 class="title" *ngIf="form.value.projects[2].ptitle">{{form.value.projects[2].ptitle}}</h4><span><ul class="title-side-detail"><li><a href="{{form.value.projects[2].plink}}" *ngIf="form.value.projects[2].plink">View</a></li></ul></span>
             <ul>
               <li *ngIf="form.value.projects[2].details[0]">{{form.value.projects[2].details[0].detail}}</li>
@@ -84,6 +86,7 @@
 
             
     </div>
+    <br>
     <div>
         <h3>TECHNICAL SKILLS</h3>
         <div *ngIf="form.value.skills[0]"><b>{{form.value.skills[0].skilltype}}</b>: {{form.value.skills[0].relskills}}</div>
@@ -93,6 +96,7 @@
 
 
     </div>
+    <br>
     <div>
             <h3>MISCELLANEOUS</h3>
             <div *ngIf="form.value.misc[0]"><b>{{form.value.misc[0].activity}}</b>: {{form.value.misc[0].actdetail}}</div>
@@ -104,6 +108,7 @@
             <div *ngIf="form.value.misc[6]"><b>{{form.value.misc[6].activity}}</b>: {{form.value.misc[6].actdetail}}</div>
 
     </div>
+    <br>
     <div class="other-interest-a">
             <h3>Other Links</h3>
             <div *ngIf="form.value.links">
@@ -113,6 +118,7 @@
             </div>
     </div>
 </div>
+<br>
 
 
 
@@ -209,3 +215,4 @@
 		</div>
 	</div>
 </div>
+

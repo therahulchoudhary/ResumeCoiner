@@ -7,13 +7,15 @@ import { LiteComponent } from './lite/lite.component';
 import { LandingComponent } from './landing/landing.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NoobComponent } from './noob/noob.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClassicComponent,
     LiteComponent,
-    LandingComponent
+    LandingComponent,
+    NoobComponent
   ],
   imports: [
     BrowserModule,
