@@ -3,7 +3,10 @@
 		<div class="row">
 			<div class="col-md-6">
         <!-- <pre style="font-size:15px">{{ form.value | json }}</pre> -->
-   <div class="main-div" id="contentToConvert">
+   
+			<div class="col-md-6 resume-side-div">
+        <!-- <pre style="font-size:15px">{{ form.value.edu[0] | json }}</pre> -->
+   <div class="resume-body" id="contentToConvert">
     <header>
             <table>   
                 <tr>
@@ -127,15 +130,18 @@
           <input type="text" formControlName="personalweb">
          
           EDUCATION
+        <form [formGroup]="form" class="resume-form">
+          <h1>Start Creating your Resume</h1>
+          <label>Education</label>
           <div formArrayName="edu">
             <div  *ngFor="let E of form['controls'].edu['controls']; let ie=index">
               <div formGroupName="{{ie}}" class="edu">
                 <input type="text" formControlName="edetail">
               </div>
             </div>
-            <input type="button" (click)="addEduDetail()" value="Add educa details">
+            <input type="button" (click)="addEduDetail()" value="ADD EDUCATION DETAIL">
           </div>
-          workXP
+          <label>Work Experience</label>
           <div formArrayName="works">
             <div *ngFor="let W of form['controls'].works['controls']; let iw=index">
               <div formGroupName="{{iw}}" class="works">
@@ -147,13 +153,13 @@
                       <input type="text" formControlName="wdetail" >
                     </div>
                   </div>
-                  <input type="button" (click)="addwWorkDetail(iw)" value="Add work details">
+                  <input type="button" (click)="addwWorkDetail(iw)" style="display:inline;float:left;margin-right:5px;" value="ADD WORK DETAILS">
                 </div>
               </div>
             </div>
-            <input type="button" (click)="addWork()" value="Add work">
+            <input type="button" (click)="addWork()" value="ADD WORK">
           </div>
-          projects
+          <label>Projects</label>
           <div formArrayName="projects">
             <div *ngFor="let P of form['controls'].projects['controls']; let ip=index">
               <div formGroupName="{{ip}}" class="projects">
@@ -167,14 +173,14 @@
                       <button  type="button" (click)="deleteZ(id,ip)" style="color:red;">@@</button>
                     </div>
                   </div>
-                  <input type="button" (click)="addZ(ip)" value="Add details">
+                  <input type="button" (click)="addZ(ip)" style="display:inline;float:left;margin-right:5px;" value="ADD DETAILS">
                 </div>
               </div>
               <button  type="button" (click)="deleteY(ip)" style="color:red;">$$</button>
             </div>
-            <input type="button" (click)="addY()" value="Add Project">
+            <input type="button" (click)="addY()" value="ADD PROJECT">
           </div>
-          SKILLS
+          <label>Skills</label>
           <div formArrayName="skills">
             <div *ngFor="let S of form['controls'].skills['controls']; let is=index">
               <div formGroupName="{{is}}" class="projects">
@@ -182,9 +188,9 @@
                 <input type="text" formControlName="relskills">
               </div>
             </div>
-            <input type="button" (click)="addskills()" value="Add Skills">
+            <input type="button" (click)="addskills()" value="ADD SKILLS">
           </div>
-          MISCELLANEOUS
+          <label>Miscellaneous</label>
           <div formArrayName="misc">
             <div *ngFor="let M of form['controls'].misc['controls']; let im=index">
               <div formGroupName="{{im}}" class="misc">
@@ -192,16 +198,16 @@
                 <input type="text" formControlName="actdetail">
               </div>
             </div>
-            <input type="button" (click)="addmisc()" value="Add activity">
+            <input type="button" (click)="addmisc()" value="ADD ACTIVITY">
           </div>
-          links
+          <label>Other Links</label>
           <div formArrayName="links">
             <div *ngFor="let L of form['controls'].links['controls']; let il=index">
               <div formGroupName="{{il}}" class="misc">
                 <input type="text" formControlName="link" >
               </div>
             </div>
-            <input type="button" (click)="addlink()" value="Add link">
+            <input type="button" (click)="addlink()" value="ADD LINK">
           </div>
       </form>
   
